@@ -1,1 +1,23 @@
-/* Custom CSS Here */
+body#content{
+    padding-top: 65px;   
+}
+
+.welcomeInfo{
+    margin: auto;
+}
+
+.navbar{
+    background: #123C69;
+}
+
+ul.alignElement{
+    margin-left: 25%;
+    justify-content: space-evenly;
+}
+
+h1.headerForPage{
+    margin: auto;
+}
+p#introParagraph{
+    margin: 100%, 100%, 100%, 100%;
+}
