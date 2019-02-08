@@ -1,9 +1,17 @@
 body#content{
-    padding-top: 65px;   
+    padding-top: 65px;
 }
 
-.welcomeInfo{
-    margin: auto;
+#logoSpacing{
+    margin-left: 4%;
+}
+
+#contentOfPage{
+    margin: 0 auto;
+}
+
+#centreTitle{
+    text-align: center;
 }
 
 .navbar{
@@ -11,13 +19,20 @@ body#content{
 }
 
 ul.alignElement{
-    margin-left: 25%;
-    justify-content: space-evenly;
+    margin-left: 20%;
 }
 
 h1.headerForPage{
     margin: auto;
 }
 p#introParagraph{
-    margin: 100%, 100%, 100%, 100%;
+    text-align: center;
+}
+
+.spaceMenuItem{
+    margin: 0 0 0 30px;
+}
+
+#rotateTheImage{
+    transform: rotate(-90deg);
 }

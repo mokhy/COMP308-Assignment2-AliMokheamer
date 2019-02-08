@@ -3,12 +3,12 @@ let router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Welcome' });
+  res.render('index', { title: 'Welcome!'});
 });
 
 /* GET about me page. */
 router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About Me' });
+  res.render('aboutMe', { title: 'About Me' });
 });
 
 /* GET projects page. */
@@ -24,6 +24,13 @@ router.get('/services', function(req, res, next) {
 /* GET contact page. */
 router.get('/contact', function(req, res, next) {
   res.render('index', { title: 'Contact Me' });
+});
+
+/* Not part of Navbar routes */
+
+/* GET resume page. */
+router.get('/my-resume', function(req, res, next) {
+  res.render('aliResume', { title: 'Resume' });
 });
 
 module.exports = router;

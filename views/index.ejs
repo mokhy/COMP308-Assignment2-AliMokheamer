@@ -1,86 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title><%= title %></title>
-  <!-- CSS Section -->
-  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="Content/app.css">
-</head>
-<body id="content">
-  <!-- Image and text -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <a class="navbar-brand" href="/" style="margin-left: 5%">
-    <img src="Assets/images/logo.png" width="62" height="35" class="d-inline-block align-top respnsive" alt="Ali's Logo">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
-  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav alignElement">
-
-      <% if(title == "Welcome") { %>
-        <li class="nav-item active">
-        <% } else { %>
-          <li class="nav-item">
-          <% } %>
-      
-        <a class="nav-link" href="/"><i class="fa fa-md fa-home" aria-hidden="true"></i> Home<span class="sr-only"(current)></span></a>
-      </li>
-
-      <% if(title == "About Me") { %>
-        <li class="nav-item active">
-        <% } else { %>
-          <li class="nav-item">
-          <% } %>
-
-        <a class="nav-link" href="/about"><i class="fa fa-md fa fa-newspaper-o" aria-hidden="true"></i> About</a>
-      </li>
-
-      <% if(title == "My Projects") { %>
-        <li class="nav-item active">
-        <% } else { %>
-          <li class="nav-item">
-          <% } %>
-
-        <a class="nav-link" href="/projects"><i class="fa fa-md fa-desktop" aria-hidden="true"></i> Projects</a>
-      </li>
-
-      <% if(title == "Services") { %>
-        <li class="nav-item active">
-        <% } else { %>
-          <li class="nav-item">
-          <% } %>
-
-        <a class="nav-link" href="/services"><i class="fa fa-md fa fa-puzzle-piece" aria-hidden="true"></i> Services</a>
-      </li>
-
-      <% if(title == "Contact Me") { %>
-        <li class="nav-item active">
-        <% } else { %>
-          <li class="nav-item">
-          <% } %>
-
-        <a class="nav-link" href="/contact"><i class="fa fa-md fa-address-card" aria-hidden="true"></i> Contact</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<% include ./partials/header.ejs %>
 
 <!-- Body Content Here -->
 <div class="container">
-  <div class="welcomeInfo">
-    <h1 class="display-4"><%= title %></h1>
+  <div id="contentOfPage">
+    <h1 id="centreTitle" class="display-4"><%= title %></h1>
+    <br>
+    <article>
+    <p>Welcome to my <b>Portfolio Website!</b></p>
+    <p>This is a portfolio website based on myself <i>Ali Mokheamer</i>. The main goal of this website
+    is to advertise myself (skills, abilities, experience, etc.). This site covers:</p> 
+    <ol>
+      <li>Biography about myself (<a href="/about">About</a>)</li>
+      <li>My education (also in about page, link above)</li>
+      <li>My projects (desktop apps and web apps) (<a href="/projects">Projects</a>)</li>
+      <li>Services I offer a.k.a skills (<a href="/services">Services</a>)</li>
+    </ol>
+    <p>If you are interested in my abilities and skills that I currently have and would like to reach me for further information,
+     navigate over to the <a href="/contact">Contact</a> page. I'll try to respond to inquiries as soon as possible.</p>
+    </article>
   </div>
 </div>  
 
-  <!-- JavaScript Section -->
-  <script src="jquery/dist/jquery.min.js"></script>
-  <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="Scripts/app.js"></script>
-</body>
-</html>
+<% include ./partials/footer.ejs %>
