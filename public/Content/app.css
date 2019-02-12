@@ -1,5 +1,5 @@
 body#content{
-    padding-top: 65px;
+    padding-top: 75px;
 }
 
 #logoSpacing{
@@ -19,7 +19,7 @@ body#content{
 }
 
 ul.alignElement{
-    margin-left: 20%;
+    margin-left: 22%;
 }
 
 h1.headerForPage{
@@ -30,9 +30,45 @@ p#introParagraph{
 }
 
 .spaceMenuItem{
-    margin: 0 0 0 30px;
+    margin: 0 0 0 1.5rem;
 }
 
 #rotateTheImage{
     transform: rotate(-90deg);
+}
+
+.fontForParagraph{
+    font-family: Roboto, Arimo, Verdana, Arial, Helvetica, sans-serif;
+}
+
+.titleFont{
+    font-family: Helvetica, Lato, sans-serif;
+}
+
+.footer_content{
+    padding: 40px 0;
+    background-color: lightgrey;
+    color: #4b4c4d;
+}
+
+.footer_content .socialMedia{
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.footer_content ul{
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.footer_content li{
+    padding: 0 10;
+}
+
+.link-item{
+    display: inline-block;
 }

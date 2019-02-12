@@ -3,27 +3,27 @@ let router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Welcome!'});
+  res.render('content', { title: 'Home'});
 });
 
 /* GET about me page. */
 router.get('/about', function(req, res, next) {
-  res.render('aboutMe', { title: 'About Me' });
+  res.render('content', { title: 'About Me' });
 });
 
 /* GET projects page. */
 router.get('/projects', function(req, res, next) {
-  res.render('index', { title: 'My Projects' });
+  res.render('content', { title: 'My Projects' });
 });
 
 /* GET services page. */
 router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services' });
+  res.render('content', { title: 'Services' });
 });
 
 /* GET contact page. */
 router.get('/contact', function(req, res, next) {
-  res.render('index', { title: 'Contact Me' });
+  res.render('content', { title: 'Contact Me' });
 });
 
 /* Not part of Navbar routes */

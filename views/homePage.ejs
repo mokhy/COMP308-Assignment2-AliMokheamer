@@ -1,13 +1,12 @@
-<% include ./partials/header.ejs %>
 
 <!-- Body Content Here -->
 <div class="container">
   <div id="contentOfPage">
-    <h1 id="centreTitle" class="display-4"><%= title %></h1>
+    <h1 id="centreTitle" class="display-4 titleFont">Welcome to my <%= title %> Page!</h1>
     <br>
     <article>
-    <p>Welcome to my <b>Portfolio Website!</b></p>
-    <p>This is a portfolio website based on myself <i>Ali Mokheamer</i>. The main goal of this website
+    <p class="fontForParagraph">Welcome to my <b>Portfolio Website!</b></p>
+    <p class="fontForParagraph">This is a portfolio website based on myself <i>Ali Mokheamer</i>. The main goal of this website
     is to advertise myself (skills, abilities, experience, etc.). This site covers:</p> 
     <ol>
       <li>Biography about myself (<a href="/about">About</a>)</li>
@@ -15,10 +14,8 @@
       <li>My projects (desktop apps and web apps) (<a href="/projects">Projects</a>)</li>
       <li>Services I offer a.k.a skills (<a href="/services">Services</a>)</li>
     </ol>
-    <p>If you are interested in my abilities and skills that I currently have and would like to reach me for further information,
+    <p class="fontForParagraph">If you are interested in my abilities and skills that I currently have and would like to reach me for further information,
      navigate over to the <a href="/contact">Contact</a> page. I'll try to respond to inquiries as soon as possible.</p>
     </article>
   </div>
-</div>  
-
-<% include ./partials/footer.ejs %>
+</div>

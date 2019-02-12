@@ -1,0 +1,23 @@
+<% include ./partials/header.ejs %>
+
+<div class="container">
+  <div id="contentOfPage">
+        <% if(title == "Home"){ %>
+        <% include ./homePage.ejs %>
+        <% } %>
+        <% if(title == "About Me"){ %>
+        <% include ./aboutMe.ejs %>
+        <% } %>
+        <% if(title == "My Projects"){ %>
+        <% include ./projects.ejs %>
+        <% } %>
+        <% if(title == "Services"){ %>
+        <% include ./homePage.ejs %>
+        <% } %>
+        <% if(title == "Contact Me"){ %>
+        <% include ./contactMe.ejs %>
+        <% } %>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>
