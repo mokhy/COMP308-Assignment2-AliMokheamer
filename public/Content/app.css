@@ -25,6 +25,11 @@ ul.alignElement{
 h1.headerForPage{
     margin: auto;
 }
+
+.centreContent{
+    align-items: center;
+}
+
 p#introParagraph{
     text-align: center;
 }
@@ -71,4 +76,25 @@ p#introParagraph{
 
 .link-item{
     display: inline-block;
+}
+
+.textarea{
+    width: 600px; 
+    resize: none;
+}
+
+.spaceListOfServices{
+    margin-top: 4.5rem;
+}
+
+.spaceListOfProjects{
+    margin-top: 5rem;
+}
+
+.centreImageForServicesOtherImages{
+    margin-left: 8rem;
+}
+
+.centreImageForServicesFirstRow{
+    margin-left: 5rem;
 }
