@@ -1,100 +1,112 @@
-body#content{
-    padding-top: 75px;
+body#content {
+  padding-top: 75px;
 }
 
-#logoSpacing{
-    margin-left: 4%;
+#logoSpacing {
+  margin-left: 4%;
 }
 
-#contentOfPage{
-    margin: 0 auto;
+#contentOfPage {
+  margin: 0 auto;
 }
 
-#centreTitle{
-    text-align: center;
+#centreTitle {
+  text-align: center;
 }
 
-.navbar{
-    background: #123C69;
+.navbar {
+  background: #123c69;
 }
 
-ul.alignElement{
-    margin-left: 22%;
+ul.alignElement {
+  margin-left: 22%;
 }
 
-h1.headerForPage{
-    margin: auto;
+h1.headerForPage {
+  margin: auto;
 }
 
-.centreContent{
-    align-items: center;
+.centreContent {
+  align-items: center;
 }
 
-p#introParagraph{
-    text-align: center;
+p#introParagraph {
+  text-align: center;
 }
 
-.spaceMenuItem{
-    margin: 0 0 0 1.5rem;
+.spaceMenuItem {
+  margin: 0 0 0 1.5rem;
 }
 
-#rotateTheImage{
-    transform: rotate(-90deg);
+#rotateTheImage {
+  transform: rotate(-90deg);
 }
 
-.fontForParagraph{
-    font-family: Roboto, Arimo, Verdana, Arial, Helvetica, sans-serif;
+.fontForParagraph {
+  font-family: Roboto, Arimo, Verdana, Arial, Helvetica, sans-serif;
 }
 
-.titleFont{
-    font-family: Helvetica, Lato, sans-serif;
+.titleFont {
+  font-family: Helvetica, Lato, sans-serif;
 }
 
-.footer_content{
-    padding: 40px 0;
-    background-color: lightgrey;
-    color: #4b4c4d;
+.footer_content {
+  padding: 40px 0;
+  background-color: lightgrey;
+  color: #4b4c4d;
 }
 
-.footer_content .socialMedia{
-    text-align: center;
-    padding-bottom: 25px;
+.footer_content .socialMedia {
+  text-align: center;
+  padding-bottom: 25px;
 }
 
-.footer_content ul{
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 0;
+.footer_content ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
 }
 
-.footer_content li{
-    padding: 0 10;
+.footer_content li {
+  padding: 0 10;
 }
 
-.link-item{
-    display: inline-block;
+.link-item {
+  display: inline-block;
 }
 
-.textarea{
-    width: 600px; 
-    resize: none;
+.textarea {
+  width: 600px;
+  resize: none;
 }
 
-.spaceListOfServices{
-    margin-top: 4.5rem;
+.spaceListOfServices {
+  margin-top: 4.5rem;
 }
 
-.spaceListOfProjects{
-    margin-top: 5rem;
+.spaceListOfProjects {
+  margin-top: 5rem;
 }
 
-.centreImageForServicesOtherImages{
-    margin-left: 8rem;
+.centreImageForServicesOtherImages {
+  margin-left: 8rem;
 }
 
-.centreImageForServicesFirstRow{
-    margin-left: 5rem;
+.centreImageForServicesFirstRow {
+  margin-left: 5rem;
+}
+
+.myPhoto {
+  width: 500px;
+  height: 400px;
+  float: right;
+  margin-top: 3rem;
+  border-radius: 5px;
+  /* From https://www.w3schools.com/css/tryit.asp?filename=trycss_ex_images_card 
+   What this does is it sets where the shadow of the image will cast here the top (4px) and right (8px) will have the shadow affect
+   and rgba says what color do you want to set the shadow with the opacity of the shadow*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }
