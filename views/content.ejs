@@ -1,5 +1,9 @@
+<!-- Content Page (controls which page is shown) -->
 <% include ./partials/header.ejs %>
 
+<!-- This holds all the pages on my website (whatever is in the navbar) that will be shown in a certain way according to a condition and
+     using a container to make the content look cleaner (not spanning to the width of the browser window) with custom css (to position
+     content of page to be centred) -->
 <div class="container">
   <div id="contentOfPage">
         <% if(title == "Home"){ %>

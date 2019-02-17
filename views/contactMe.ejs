@@ -1,86 +1,89 @@
-<div class="container">
-    <div id="contentOfPage">
-        <h1 id="centreTitle" class="display-4 titleFont"><%= title %></h1>
-        <br />
-        <div class="card" style="width: 900px; margin: auto">
-            <div class="card-header">Contact Information</div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col">
-                        <h5>Name:</h5>
-                        <h5>Email:</h5>
-                        <h5>Company:</h5>
-                        <h5>Address:</h5>
-                        <h5>Hours of availability:</h5>
-                        <h5>Days of availability:</h5>
-                    </div>
-                    <div class="col" style="padding-right: 13rem">
-                        <h5>Ali Mokheamer</h5>
-                        <h5>alimokh5449@gmail.com</h5>
-                        <h5>Centennial College</h5>
-                        <h5>941 Progress Ave, Scarborough, ON</h5>
-                        <h5>8 A.M - 7 P.M</h5>
-                        <h5>Monday-Sunday</h5>
-                    </div>
+<!-- Contact Page -->
+<h1 id="centreTitle" class="display-4 titleFont"><%= title %></h1>
+<br />
+<!-- Bootstrap Card to show my contact information -->
+<!-- This is to show my contact information in Bootstraps card using a div and inside I am giving two columns one that specifies the information
+     and the other to show it-->
+<div class="card" style="width: 900px; margin: auto">
+    <div class="card-header">Contact Information</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <h5>Name:</h5>
+                <h5>Email:</h5>
+                <h5>Company:</h5>
+                <h5>Address:</h5>
+                <h5>Hours of availability:</h5>
+                <h5>Days of availability:</h5>
+            </div>
+            <div class="col" style="padding-right: 13rem">
+                <h5>Ali Mokheamer</h5>
+                <h5>alimokh5449@gmail.com</h5>
+                <h5>Centennial College</h5>
+                <h5>941 Progress Ave, Scarborough, ON</h5>
+                <h5>8 A.M - 7 P.M</h5>
+                <h5>Monday-Sunday</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<h5 class="fontForParagraph">
+    To contact me, please fill out this form below
+</h5>
+<br />
+<!-- Contact Form -->
+<!-- This is to get a potentially interested persons contact information by collecting their first and last 
+     name with their phone number and email using a Bootstrap style contact form and other custom CSS-->
+<div class="contact-form">
+    <form action="" class="form" method="POST" autocomplete="off">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-5">
+                    <label for="FirstNameTxtFiled">First Name</label>
+                    <input type="text" class="form-control" id="FirstNameTextBox" placeholder="Bill (required)"
+                        name="firstNameTxtBox" required maxlength="50" autofocus />
+                </div>
+                <div class="col-md-5">
+                    <label for="LastNameTxtFiled">Last Name</label>
+                    <input type="text" class="form-control" id="LastNameTextBox" placeholder="Doe (required)"
+                        name="lastNameTxtBox" required maxlength="50" />
                 </div>
             </div>
         </div>
-        <br />
-        <br />
-        <h5 class="fontForParagraph">
-            To contact me, please fill out this form below
-        </h5>
-        <br />
-        <div class="contact-form">
-            <form action="" class="form" method="POST" autocomplete="off">
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <label for="FirstNameTxtFiled">First Name</label>
-                            <input type="text" class="form-control" id="FirstNameTextBox" placeholder="Bill (required)"
-                                name="firstNameTxtBox" required maxlength="50" autofocus />
-                        </div>
-                        <div class="col-md-5">
-                            <label for="LastNameTxtFiled">Last Name</label>
-                            <input type="text" class="form-control" id="LastNameTextBox" placeholder="Doe (required)"
-                                name="lastNameTxtBox" required maxlength="50" />
-                        </div>
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <label for="EmailTxtFiled">Email</label>
-                            <input type="email" class="form-control" id="EmailTextBox"
-                                placeholder="billdoe@somemail.com (required)" name="emailTxtBox" required maxlength="60"
-                                autocomplete="off" />
-                        </div>
-                        <div class="col-md-4">
-                            <label>Phone Number</label>
-                            <input type="text" class="form-control" id="PhoneNumNameTextBox"
-                                placeholder="123-456-7890 (required)" name="phoneNumNameTxtBox" required maxlength="12"
-                                style="width: 200px" />
-                        </div>
-                    </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-5">
+                    <label for="EmailTxtFiled">Email</label>
+                    <input type="email" class="form-control" id="EmailTextBox"
+                        placeholder="billdoe@somemail.com (required)" name="emailTxtBox" required maxlength="60"
+                        autocomplete="off" />
                 </div>
-
-                <div class="form-group">
-                    <label for="FirstNameTxtFiled">Message</label>
-                    <textarea class="form-control textarea" placeholder="Your message here (optional)" name="MessageBox"
-                        spellcheck="true" rows="6" maxlength="400" autocomplete="off"></textarea>
+                <div class="col-md-4">
+                    <label for="PhoneTxtField">Phone Number</label>
+                    <input type="text" class="form-control" id="PhoneNumTextBox"
+                        placeholder="123-456-7890 (required)" name="phoneNumNameTxtBox" required maxlength="12"
+                        style="width: 200px" />
                 </div>
-                <br />
-                <div class="row">
-                    <div class="col-md-6">
-                        <a href="/" class="btn btn-primary" role="button" aria-pressed="true" style="width: 100px"><i
-                                class="fa fa-paper-plane"></i> Submit</a>
-                        <button type="reset" class="btn btn-secondary" style="margin-left: 4rem; width: 100px">
-                            <i class="fa fa-refresh"></i> Refresh</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
-        <br>
-    </div>
+
+        <div class="form-group">
+            <label for="MessageTxtFiled">Message</label>
+            <textarea class="form-control textarea" placeholder="Your message here (optional)" name="MessageBox"
+                spellcheck="true" rows="6" maxlength="400" autocomplete="off"></textarea>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/" class="btn btn-primary" role="button" aria-pressed="true" style="width: 100px"><i
+                        class="fa fa-paper-plane"></i> Submit</a>
+                <button type="reset" class="btn btn-secondary" style="margin-left: 4rem; width: 100px">
+                    <i class="fa fa-refresh"></i> Refresh</button>
+            </div>
+        </div>
+    </form>
 </div>
+<br>

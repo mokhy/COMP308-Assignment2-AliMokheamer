@@ -1,9 +1,13 @@
+/* 
+   File Name: app.css
+   Student Name: Ali Mokheamer
+   Student Number: 300884450
+   Date: February 16, 2019
+*/
+
+/* Body Styling */
 body#content {
   padding-top: 75px;
-}
-
-#logoSpacing {
-  margin-left: 4%;
 }
 
 #contentOfPage {
@@ -12,14 +16,6 @@ body#content {
 
 #centreTitle {
   text-align: center;
-}
-
-.navbar {
-  background: #123c69;
-}
-
-ul.alignElement {
-  margin-left: 22%;
 }
 
 h1.headerForPage {
@@ -34,24 +30,12 @@ p#introParagraph {
   text-align: center;
 }
 
-.spaceMenuItem {
-  margin: 0 0 0 1.5rem;
-}
-
-#rotateTheImage {
-  transform: rotate(-90deg);
-}
-
 .fontForParagraph {
   font-family: Roboto, Arimo, Verdana, Arial, Helvetica, sans-serif;
 }
 
 .titleFont {
   font-family: Helvetica, Lato, sans-serif;
-}
-
-.link-item {
-  display: inline-block;
 }
 
 .textarea {
@@ -67,12 +51,40 @@ p#introParagraph {
   margin-top: 5rem;
 }
 
+
+/* Navbar Styling */
+.navbar {
+  background: #123c69;
+}
+
+#logoSpacing {
+  margin-left: 4%;
+}
+
+ul.alignElement {
+  margin-left: 22%;
+}
+
+.spaceMenuItem {
+  margin: 0 0 0 1.5rem;
+}
+
+.link-item {
+  display: inline-block;
+}
+
+
+/* Photo styling for Services, Projects, and About Page */
 .centreImageForServicesOtherImages {
   margin-left: 8rem;
 }
 
 .centreImageForServicesFirstRow {
   margin-left: 5rem;
+}
+
+#rotateTheImage {
+  transform: rotate(-90deg);
 }
 
 .myPhoto {

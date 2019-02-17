@@ -1,4 +1,10 @@
 /* Custom Javascript goes here */
+/*
+    File Name: app.js
+    Student Name: Ali Mokheamer
+    Student Number: 300884450
+    Date: February 16, 2019
+*/
 // IIFE
 (function(){
 
