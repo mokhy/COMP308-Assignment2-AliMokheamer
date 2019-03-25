@@ -1,3 +1,4 @@
+// modules for node and express
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
@@ -6,33 +7,40 @@ let logger = require('morgan');
 
 // database setup area
 let mongoose = require('mongoose');
-let DB = require('./config/db');
+let DB = require('./db');
 
-// a reference to the connection itself
+/* a reference to the connection itself */
 mongoose.connect(DB.URI, { useNewUrlParser: true });
 
+/* Opening the connection with a message to indicate we successfully connected, otherwise when an error event is triggered show
+   what has happened */
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.log.bind(console, "Could not connect because of the following: "));
 mongoDB.once('open', () => {
   console.log('Connected to MongoDB successfully...');
 });
 
-let indexRouter = require('./routes/index');
+let indexRouter = require('../routes/index');
+let contactsRouter = require('../routes/contacts');
 
 let app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'node_modules')));
+app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../node_modules')));
 
-app.use('/', indexRouter);
+app.use('/api', indexRouter);
+app.use('/api/contacts', contactsRouter);
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../views/homePage.ejs'));
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
