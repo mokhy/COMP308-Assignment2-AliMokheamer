@@ -4,99 +4,34 @@ let router = express.Router();
 
 let contactModel = require('../models/contacts');
 
-router.get('/', (req, res, next) => {
-    contactModel.find((err, contactList) => {
-        if (err) {
-            return console.log(err);
-        } else {
-            res.render('contactList/index', {
-                title: 'Contact List',
-                contactList: contactList
-            });
-            // res.json({success: true, msg: 'Add page successfully loaded and displayed', contactList: contactList});
-        }
-    });
-});
+/* Controller import in order to perform necessary logic */
+let contactsController = require('../controllers/contacts');
+
+router.get('/', contactsController.displayContactPage);
 
 /* GET Route for the Add Contact Page
-   this will retrieve the Add page */
+   this will display the Add page */
    
-router.get('/add', (req, res, next) => {
-    res.json({success: true, msg: 'Add page successfully loaded and displayed'});
-});
+router.get('/add', contactsController.displayAddPage);
 
 /* POST Route for the Add page
-   this processes the Add page */
+   this processes the Add page to add a new contact */
 
-router.post('/add', (req, res, next) => {
-    let newContact = contactModel({
-        "firstName": req.body.firstName,
-        "lastName": req.body.lastName,
-        "email": req.body.email,
-        "phoneNumber": req.body.phoneNumber
-    });
-
-    contactModel.create(newContact, (err, contactModel) => {
-        if (err) {
-            console.log(err);
-            res.end(err);
-        } else {
-            res.json({success: true, msg: 'Created a contact successfully'});
-        }
-    });
-});
+router.post('/add', contactsController.processAddPage);
 
 /* GET Route for the Edit page
    this displays the Edit page */
 
-router.get('/edit/:id', (req, res, next) => {
-    let id = req.params.id;
+router.get('/edit/:id', contactsController.displayEditPage);
 
-    contactModel.findById(id, (err, contactObject) => {
-        if (err) {
-            console.log(err);
-            res.end(err);
-        } else {
-            res.json({success: true, msg: 'Contact to edit displayed successfully', contact: contactObject});
-        }
-    });
-});
+/* POST Route for the Edit page
+   this processes the edit page to update a particular contact */
 
-router.post('/edit/:id', (req, res, next) => {
-    let id = req.params.id;
-
-    let updateAContact = contactModel({
-        "_id": id,
-        "firstName": req.body.firstName,
-        "lastName": req.body.lastName,
-        "email": req.body.email,
-        "phoneNumber": req.body.phoneNumber
-    });
-
-    contactModel.update({_id: id}, updateAContact, (err) => {
-        if (err) {
-            console.log(err);
-            res.end(err);
-        } else {
-            res.json({success: true, msg: 'Successfully updated the contact'});
-        }
-    });
-});
+router.post('/edit/:id', contactsController.processEditPage);
 
 /* GET Route for the deleting a contact
    this will delete a contact from the contact list */
 
-    router.get('/delete/:id', (req, res, next) => {
-        let id = req.params.id;
-
-        contactModel.remove({_id: id}, (err) => {
-            if (err) {
-                console.log(err);
-                res.end(err);
-            } else {
-                res.json({success: true, msg: 'Successfully deleted the contact'});
-            }
-        });
-    });
+router.get('/delete/:id', contactsController.deleteContact);
 
 module.exports = router;

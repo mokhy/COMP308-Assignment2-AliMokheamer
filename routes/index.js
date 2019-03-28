@@ -1,36 +1,28 @@
 let express = require('express');
 let router = express.Router();
 
+/* Registration and Login routing will be handled here (back-end) */
+
+let indexController = require('../controllers/index');
+
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('content', { title: 'Home' });
-});
+router.get('/', indexController.displayHomePage);
 
 /* GET about me page. */
-router.get('/about', function (req, res, next) {
-  res.render('content', { title: 'About Me' });
-});
+router.get('/about', indexController.displayAboutPage);
 
 /* GET projects page. */
-router.get('/projects', function (req, res, next) {
-  res.render('content', { title: 'My Projects' });
-});
+router.get('/projects', indexController.displayProjectsPage);
 
 /* GET services page. */
-router.get('/services', function (req, res, next) {
-  res.render('content', { title: 'Services' });
-});
+router.get('/services', indexController.displayServicesPage);
 
 /* GET contact page. */
-router.get('/contact', function (req, res, next) {
-  res.render('content', { title: 'Contact Me' });
-});
+router.get('/contact', indexController.displayContactPage);
 
 /* Not part of Navbar routes */
 
 /* GET resume page. */
-router.get('/my-resume', function (req, res, next) {
-  res.render('aliResume', { title: 'Resume' });
-});
+router.get('/my-resume', indexController.displayResumePage);
 
 module.exports = router;
