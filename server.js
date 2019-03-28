@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-let app = require('./config/app');
-let debug = require('debug')('comp308-assignment1-alimokheamer:server');
+let app = require('./server/config/app');
+let debug = require('debug')('comp308-assignment2-alimokheamer:server');
 let http = require('http');
 
 /**
