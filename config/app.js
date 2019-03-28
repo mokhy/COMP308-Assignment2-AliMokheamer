@@ -5,6 +5,11 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+// modules for authentication
+let passportJWT = require('passport-jwt');
+let JWTStrategy = passportJWT.Strategy;
+let ExtractJWT = passportJWT.ExtractJwt;
+
 // database setup area
 let mongoose = require('mongoose');
 let DB = require('./db');
@@ -35,6 +40,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
+
+// this part verifies that the token is being sent by the user and is valid
+let jwtOptions = {};
+jwtOptions.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
+jwtOptions.secretOrKey = DB.secret;
+
+let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
+  User.findById(jwt_payload.id)
+    .then(user => {
+      return done(null, user);
+    })
+    .catch(err => {
+      return done(err, false);
+    });
+});
 
 app.use('/api', indexRouter);
 app.use('/api/contacts', contactsRouter);
