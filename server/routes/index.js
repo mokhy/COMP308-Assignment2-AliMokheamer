@@ -20,26 +20,22 @@ let indexController = require('../controllers/index');
 // /* GET contact page. */
 // router.get('/contact', indexController.displayContactPage);
 
-// /* Not part of Navbar routes */
-
-// /* GET resume page. */
-// router.get('/my-resume', indexController.displayResumePage);
-
-
-
-/* GET Route for Login page
-   this will display the Login page */
+// |--/* Not part of Navbar routes */-------------------------------|
+// |                                                                |
+// |  /* GET resume page. */                                        |
+// |  router.get('/my-resume', indexController.displayResumePage);  |
+// |----------------------------------------------------------------|
 
 /* POST Route for Login page 
    this processes the Login page to login the user */
-
-/* GET Route for Registration page
-   this will display the Registration page */
+   router.post('/login', indexController.processLoginPage);
 
 /* POST Route for Registration page
    this processes the Registration page to register a user */
+   router.post('/register', indexController.processRegistrationPage)
 
 /* GET Route for Logout
    this will logout the user when the "logout" link is clicked */
+   router.get('/logout', indexController.performLogout);
 
 module.exports = router;

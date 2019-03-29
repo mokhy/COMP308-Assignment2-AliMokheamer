@@ -4,8 +4,12 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let cors = require('cors');
 
 // modules for authentication
+let session = require('express-session');
+let passport = require('passport');
+
 let passportJWT = require('passport-jwt');
 let JWTStrategy = passportJWT.Strategy;
 let ExtractJWT = passportJWT.ExtractJwt;
@@ -38,21 +42,36 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../../public')));
-app.use(express.static(path.join(__dirname, '../../node_modules')));
+
+/* Removed because there will be no ejs pages, therefore there is no point to add functionality and design */
+//app.use(express.static(path.join(__dirname, '../../public')));
+//app.use(express.static(path.join(__dirname, '../../node_modules')));
+
+app.use(cors());
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+/* User model defined */
+let userModel = require('../models/user');
+let User = userModel.User;
+
+// define a User authentication strategy
+passport.use(User.createStrategy());
 
 // this part verifies that the token is being sent by the user and is valid
 let jwtOptions = {};
 jwtOptions.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
 jwtOptions.secretOrKey = DB.secret;
 
-let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
-  User.findById(jwt_payload.id)
+let strategy = new JWTStrategy(jwtOptions, (jwt_payLoad, verified) => {
+  User.findById(jwt_payLoad.id)
     .then(user => {
-      return done(null, user);
+      return verified(null, user);
     })
     .catch(err => {
-      return done(err, false);
+      return verified(err, false);
     });
 });
 
