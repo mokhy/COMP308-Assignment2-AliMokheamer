@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-//let jwt = require('jsonwebtoken');
+let jwt = require('jsonwebtoken');
 
 let contactModel = require('../models/contacts');
 

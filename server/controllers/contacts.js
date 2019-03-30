@@ -10,7 +10,7 @@ module.exports.displayContactPage = (req, res, next) => {
         if (err) {
             return console.log(err);
         } else {
-            res.json({success: true, msg: 'Add page successfully loaded and displayed', contactList: contactList});
+            res.json({success: true, msg: 'Contact list page displayed successfully', contactList: contactList});
         }
     });
 }
@@ -66,7 +66,7 @@ module.exports.processEditPage = (req, res, next) => {
             console.log(err);
             res.end(err);
         } else {
-            res.json({success: true, msg: 'Successfully updated the contact'});
+            res.json({success: true, msg: 'Successfully updated the contact', contact: updateAContact});
         }
     });
 }

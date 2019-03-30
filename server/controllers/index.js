@@ -53,9 +53,24 @@ let DB = require('../config/db');
           return next(err);
         }
 
-        /* const payLoad = {
-          
-        } */
+        const payLoad = {
+          id: user._id,
+          username: user.username,
+          email: user.email,
+          displayName: user.displayName
+        }
+
+        const authenticationToken = jwt.sign(payLoad, DB.secret, {
+          expiresIn: 172800 // 2 days
+        });
+
+        return res.json({success: true, msg: 'Successfully logged in user', user: {
+          id: user._id,
+          username: user.username,
+          email: user.email,
+          displayName: user.displayName
+        }, token: authenticationToken});
+
       });
     })(req, res, next);
   }
@@ -63,7 +78,6 @@ let DB = require('../config/db');
   module.exports.processRegistrationPage = (req, res, next) => {
     
     // creating a new user by creating a user object
-    
     let newUser = new User({
       username: req.body.username,
       /* no password because we don't want to store it as
@@ -78,7 +92,7 @@ let DB = require('../config/db');
         if (err.name == "UserExistsError") {
           console.log('Error: User exists');
         }
-        return res.json({success: false, msg: 'Error: User exists'});
+        return res.json({success: false, msg: 'Error: Failed to register user'});
       } else {
         /* if the user does not exists and there is no other error, create
            the user and give a message that the process is successful, then 
