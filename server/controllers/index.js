@@ -1,6 +1,15 @@
 let express = require('express');
 let router = express.Router();
+let mongoose = require('mongoose');
+let passport = require('passport');
+
 let jwt = require('jsonwebtoken');
+let DB = require('../config/db');
+
+/* Defining the User model so creating a user will be possible 
+   when the user signs up*/
+   let userModel = require('../models/user');
+   let User = userModel.User;
 
 // module.exports.displayHomePage = function (req, res, next) {
 //     res.render('content', { title: 'Home' });
@@ -27,11 +36,56 @@ let jwt = require('jsonwebtoken');
 //   }
 
   module.exports.processLoginPage = (req, res, next) => {
-    
+    passport.authenticate('local', (err, user, info) => {
+      // if there is a server error, return that error
+      if (err) {
+        return next(err);
+      }
+
+      /* if there is a login error, display a message to notify
+         the user */
+      if (!user) {
+        return res.json({success: false, msg: 'Error: Failed to login user'});
+      }
+      req.logIn(user, (err) => {
+        // if a server error occurs, return the error
+        if (err) {
+          return next(err);
+        }
+
+        /* const payLoad = {
+          
+        } */
+      });
+    })(req, res, next);
   }
 
   module.exports.processRegistrationPage = (req, res, next) => {
     
+    // creating a new user by creating a user object
+    
+    let newUser = new User({
+      username: req.body.username,
+      /* no password because we don't want to store it as
+      / clear text */
+      email: req.body.email,
+      displayName: req.body.displayName
+    });
+
+    User.register(newUser, req.body.password, (err) => {
+      if (err) {
+        console.log('Error: User cannot be created');
+        if (err.name == "UserExistsError") {
+          console.log('Error: User exists');
+        }
+        return res.json({success: false, msg: 'Error: User exists'});
+      } else {
+        /* if the user does not exists and there is no other error, create
+           the user and give a message that the process is successful, then 
+           redirect (handled by Angular) */
+        return res.json({success: true, msg: 'Successfully created User'});
+      }
+    });
   }
 
   module.exports.performLogout = (req, res, next) => {
