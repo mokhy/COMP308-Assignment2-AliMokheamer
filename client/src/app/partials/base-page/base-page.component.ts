@@ -12,6 +12,7 @@ export class BasePageComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.title = this.route.snapshot.data.title;
   }
 
 }

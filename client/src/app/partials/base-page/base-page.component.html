@@ -1,4 +1,7 @@
 <div class="container">
+  <div id="contentOfPage" *ngIf="title == 'Home'">
+    <title> Welcome to my {{ title }}</title>
+  </div>
   <div id="contentOfPage">
     <title>{{ title }}</title>
   </div>

@@ -1,9 +1,9 @@
 /* Global styles
 /*
-   File Name: app.css
+   File Name: styles.css
    Student Name: Ali Mokheamer
    Student Number: 300884450
-   Date: February 16, 2019
+   Date: March 30, 2019
 */
 
 /* Body Styling */
@@ -59,11 +59,11 @@ p#introParagraph {
 }
 
 #logoSpacing {
-  margin-left: 4%;
+  margin-left: 5%;
 }
 
 ul.alignElement {
-  margin-left: 22%;
+  margin-left: 18%;
 }
 
 .spaceMenuItem {
