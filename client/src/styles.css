@@ -39,6 +39,10 @@ p#introParagraph {
   font-family: Helvetica, Lato, sans-serif;
 }
 
+.fontSizeForContent {
+  font-size: 18px;
+}
+
 .textarea {
   width: 600px;
   resize: none;
@@ -63,7 +67,7 @@ p#introParagraph {
 }
 
 ul.alignElement {
-  margin-left: 18%;
+  margin-left: 16%;
 }
 
 .spaceMenuItem {
@@ -84,18 +88,16 @@ ul.alignElement {
   margin-left: 5rem;
 }
 
-#rotateTheImage {
-  transform: rotate(-90deg);
-}
-
 .myPhoto {
-  width: 500px;
-  height: 400px;
+  width: 400px;
+  height: 500px;
   float: right;
-  margin-top: 3rem;
+  margin-top: 1rem;
+  margin-left: 3rem;
   border-radius: 5px;
   /* From https://www.w3schools.com/css/tryit.asp?filename=trycss_ex_images_card
-   What this does is it sets where the shadow of the image will cast here the top (4px) and right (8px) will have the shadow affect
-   and rgba says what color do you want to set the shadow with the opacity of the shadow*/
+   What this does is it sets where the shadow of the image will cast here the top (4px) and right (8px) will
+   have the shadow affect and rgba says what color do you want to set the shadow with the opacity of the shadow
+  */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
 }

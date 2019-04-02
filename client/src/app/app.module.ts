@@ -11,6 +11,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { BasePageComponent } from './partials/base-page/base-page.component';
+import { MyResumeComponent } from './pages/my-resume/my-resume.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { BasePageComponent } from './partials/base-page/base-page.component';
     ContactComponent,
     HeaderComponent,
     FooterComponent,
-    BasePageComponent
+    BasePageComponent,
+    MyResumeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
