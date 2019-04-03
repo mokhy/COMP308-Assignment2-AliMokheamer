@@ -2,7 +2,7 @@ let express = require('express');
 let router = express.Router();
 let jwt = require('jsonwebtoken');
 
-let contactModel = require('../models/contacts');
+let contactModel = require('../models/contact');
 
 
 module.exports.displayContactPage = (req, res, next) => {

@@ -2,10 +2,10 @@ let express = require('express');
 let router = express.Router();
 let jwt = require('jsonwebtoken');
 
-let contactModel = require('../models/contacts');
+let contactModel = require('../models/contact');
 
 /* Controller import in order to perform necessary logic */
-let contactsController = require('../controllers/contacts');
+let contactsController = require('../controllers/contact');
 
 router.get('/', contactsController.displayContactPage);
 

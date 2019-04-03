@@ -1,7 +1,11 @@
+// Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+// Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -13,6 +17,15 @@ import { FooterComponent } from './partials/footer/footer.component';
 import { BasePageComponent } from './partials/base-page/base-page.component';
 import { MyResumeComponent } from './pages/my-resume/my-resume.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ContactsListComponent } from './contact-pages/contacts-list/contacts-list.component';
+import { ContactsDetailsComponent } from './contact-pages/contacts-details/contacts-details.component';
+import { ContactsDeleteComponent } from './contact-pages/contacts-delete/contacts-delete.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
+
+// Services
+import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
+
 
 @NgModule({
   declarations: [
@@ -26,13 +39,22 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     FooterComponent,
     BasePageComponent,
     MyResumeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ContactsListComponent,
+    ContactsDetailsComponent,
+    ContactsDeleteComponent,
+    SigninComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    FlashMessagesModule
   ],
-  providers: [],
+  /* Services included here */
+  providers: [FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

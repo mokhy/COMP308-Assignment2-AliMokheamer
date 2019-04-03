@@ -1,0 +1,42 @@
+<div class="container">
+  <div id="contentOfPage">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-10">
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1 class="display-5 titleFont">List of Contacts</h1>
+        <br />
+        <a class="btn btn-primary" routerLink="/contacts/add" role="button">
+          <i class="fas fa-plus"></i> Add Contact</a>
+        <br />
+        <table class="table table-bordered table-striped table-hover">
+          <!-- Header Row-->
+          <tr>
+            <th class="text-center">First Name</th>
+            <th class="text-center">Last Name</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Telephone #</th>
+            <th></th>
+            <th></th>
+          </tr>
+
+          <!-- Repeatable Template Row -->
+          <tr *ngFor="let contact of contacts">
+            <td class="text-center">{{ contact.firstName }}</td>
+            <td class="text-center">{{ contact.lastName }}</td>
+            <td class="text-center">{{ contact.email }}</td>
+            <td class="text-center">{{ contact.phoneNumber }}</td>
+            <td class="text-center">
+              <a routerLink="edit/{{ contact._id }}" class="btn btn-warning"><i class="fas fa-pen-alt"></i> Edit</a>
+            </td>
+            <td class="text-center">
+              <a routerLink="delete/{{ contact._id }}" class="btn btn-danger"><i class="fas fa-times-circle"></i> Delete</a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
