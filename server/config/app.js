@@ -27,7 +27,7 @@ mongoose.connect(DB.URI, { useNewUrlParser: true, useCreateIndex: true });
    otherwise when an error event is triggered show what has happened
 */
 let mongoDB = mongoose.connection;
-mongoDB.on('error', console.log.bind(console, "Could not connect because of the following: "));
+mongoDB.on('error', console.log.bind(console, "Could not connect because of the following:"));
 mongoDB.once('open', () => {
   console.log('Connected to MongoDB successfully...');
 });

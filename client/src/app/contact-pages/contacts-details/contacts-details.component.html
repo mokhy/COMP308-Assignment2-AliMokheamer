@@ -1,3 +1,75 @@
-<p>
-  contacts-details works!
-</p>
+<!-- Details page by: Tom Tsiliopoulos -->
+<div class="container">
+    <div id="contentOfPage">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6" style="margin: 0 auto">
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1 id="titleFont" class="display-5">{{ title }}</h1>
+        <form class="form" (submit)="onDetailsPageSubmit()">
+          <div class="form-group">
+            <label for="FirstNameTextField">First Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="FirstNameTextField"
+              placeholder="Enter First Name"
+              name="firstName"
+              [(ngModel)]="contacts.firstName"
+              value="{{ contacts.firstName }}"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="LastNameTextField">Last Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="LastNameTextField"
+              placeholder="Enter Last Name"
+              name="lastName"
+              [(ngModel)]="contacts.lastName"
+              value="{{ contacts.lastName }}"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="EmailTextField">Email:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="EmailTextField"
+              placeholder="e.g. user@example.com"
+              name="email"
+              [(ngModel)]="contacts.email"
+              value="{{ contacts.email }}"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="PhoneNumberTextField">Phone Number:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="PhoneNumberTextField"
+              placeholder="e.g. 647-123-4567"
+              name="phoneNumber"
+              [(ngModel)]="contacts.phoneNumber"
+              value="{{ contacts.phoneNumber }}"
+              required
+            />
+          </div>
+          <br />
+          <button type="submit" class="btn btn-success">
+            <i class="fas fa-check-circle"></i> Submit
+          </button>
+          <a routerLink="/contact/contacts" class="btn btn-warning" style="margin-left: 4rem">
+            <i class="fas fa-ban"></i> Cancel</a
+          >
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

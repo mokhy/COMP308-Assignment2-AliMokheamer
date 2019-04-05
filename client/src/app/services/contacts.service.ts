@@ -10,7 +10,7 @@ import { Contacts } from '../models/contacts';
 })
 export class ContactsService {
 
-  private endpoint = 'http://localhost:3000/api/contacts';
+  private endpoint = 'http://localhost:3000/api/contacts/';
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -24,5 +24,21 @@ export class ContactsService {
 
   public getContacts(): Observable<any> {
     return this.http.get<any>(this.endpoint, this.httpOptions);
+  }
+
+  public getContact(contact: Contacts): Observable<any> {
+    return this.http.get<any>(this.endpoint + 'edit/' + contact._id, this.httpOptions);
+  }
+
+  public addContact(contact: Contacts): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'add', contact, this.httpOptions);
+  }
+
+  public editContact(contact: Contacts): Observable<any> {
+    return this.http.post<any>(this.endpoint + 'edit/' + contact._id, contact, this.httpOptions);
+  }
+
+  public deleteContact(contact: Contacts): Observable<any> {
+    return this.http.get<any>(this.endpoint + 'delete/' + contact._id, this.httpOptions);
   }
 }
