@@ -28,14 +28,14 @@ let indexController = require('../controllers/index');
 
 /* POST Route for Login page 
    this processes the Login page to login the user */
-   router.post('/login', indexController.processLoginPage);
+   router.post('/signin', indexController.processLoginPage);
 
 /* POST Route for Registration page
    this processes the Registration page to register a user */
-   router.post('/register', indexController.processRegistrationPage)
+   router.post('/signup', indexController.processRegistrationPage)
 
 /* GET Route for Logout
    this will logout the user when the "logout" link is clicked */
-   router.get('/logout', indexController.performLogout);
+   router.get('/signout', indexController.performLogout);
 
 module.exports = router;

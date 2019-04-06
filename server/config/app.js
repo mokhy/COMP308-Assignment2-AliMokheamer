@@ -14,6 +14,10 @@ let passportJWT = require('passport-jwt');
 let JWTStrategy = passportJWT.Strategy;
 let ExtractJWT = passportJWT.ExtractJwt;
 
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
+
 // database setup area
 let mongoose = require('mongoose');
 let DB = require('./db');
@@ -58,6 +62,9 @@ app.use(session({
   resave: false
 }));
 
+// initialize flash
+app.use(flash());
+
 // initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
@@ -65,6 +72,10 @@ app.use(passport.session());
 /* User model defined */
 let userModel = require('../models/user');
 let User = userModel.User;
+
+// serialize and deserialize the User info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // define a User authentication strategy
 passport.use(User.createStrategy());
@@ -87,7 +98,7 @@ let strategy = new JWTStrategy(jwtOptions, (jwt_payLoad, verified) => {
 passport.use(strategy);
 
 app.use('/api', indexRouter);
-app.use('/api/contacts', contactsRouter);
+app.use('/api/contacts', passport.authenticate('jwt', {session: false}), contactsRouter);
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/index.html'));
 });

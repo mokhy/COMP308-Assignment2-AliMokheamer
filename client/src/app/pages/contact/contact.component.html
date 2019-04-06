@@ -1,6 +1,6 @@
 <app-base-page></app-base-page>
 <br />
-<div class="container">
+<div *ngIf="isSignedIn()" class="container">
   <div id="contentOfPage">
     <br />
     <!-- Bootstrap Card to show my contact information -->

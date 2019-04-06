@@ -32,10 +32,10 @@
         <a class="nav-link" routerLink="/contact"><i class="far fa-lg fa-address-card" aria-hidden="true"></i> Contact Me</a>
       </li>
 
-      <li *ngIf="isSignedIn()" class="navbar-text text-success ml-5 mr-5 d-none d-lg-inline spaceMenuItemAuthPieces"><i class="fas fa-lg fa-user"></i>
+      <li *ngIf="isSignedIn()" class="navbar-text ml-5 mr-5 d-none d-lg-inline spaceMenuItemAuthPieces"><i class="fas fa-lg fa-user"></i>
         Welcome, {{ user.displayName }}</li>
 
-      <li *ngIf="isSignedIn()" class="nav-item spaceMenuItem"><a (click)="onSignOutClick()" routerLink="/signout" class="nav-link">
+      <li *ngIf="isSignedIn()" class="nav-item"><a (click)="onSignOutClick()" routerLink="/signout" class="nav-link">
         <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
 
       <li *ngIf="!isSignedIn()" class="nav-item spaceMenuItem"><a routerLink="/signin" class="nav-link">

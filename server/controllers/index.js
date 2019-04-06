@@ -86,9 +86,12 @@ let DB = require('../config/db');
       displayName: req.body.displayName
     });
 
+    // console.log(newUser);
+
     User.register(newUser, req.body.password, (err) => {
       if (err) {
         console.log('Error: User cannot be created');
+        // console.log(err.name);
         if (err.name == "UserExistsError") {
           console.log('Error: User exists');
         }
@@ -103,6 +106,6 @@ let DB = require('../config/db');
   }
 
   module.exports.performLogout = (req, res, next) => {
-    res.logout();
+    req.logout();
     res.json({success: true, msg: 'Successfully logged out user'});
   }
