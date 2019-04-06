@@ -7,8 +7,8 @@
 */
 
 /* Body Styling */
-body#content {
-  padding-top: 75px;
+.content {
+  padding-top: 7%;
 }
 
 #contentOfPage {
@@ -67,11 +67,15 @@ p#introParagraph {
 }
 
 ul.alignElement {
-  margin-left: 16%;
+  margin-left: 12%;
 }
 
 .spaceMenuItem {
   margin: 0 0 0 1.5rem;
+}
+
+.spaceMenuItemAuthPieces {
+  margin: 0 0 0 2.5rem;
 }
 
 .link-item {
@@ -94,6 +98,7 @@ ul.alignElement {
   float: right;
   margin-top: 1rem;
   margin-left: 3rem;
+  margin-bottom: 1rem;
   border-radius: 5px;
   /* From https://www.w3schools.com/css/tryit.asp?filename=trycss_ex_images_card
    What this does is it sets where the shadow of the image will cast here the top (4px) and right (8px) will

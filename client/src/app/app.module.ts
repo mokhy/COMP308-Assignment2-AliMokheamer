@@ -25,6 +25,12 @@ import { SignupComponent } from './pages/signup/signup.component';
 
 // Services
 import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
+import { AuthService } from './services/auth.service';
+import { JwtModule, JwtHelperService, JwtInterceptor } from '@auth0/angular-jwt';
+
+export function jwtTokenGetter() {
+  return localStorage.getItem('id_token');
+}
 
 
 @NgModule({
@@ -51,7 +57,12 @@ import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messag
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FlashMessagesModule
+    FlashMessagesModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: jwtTokenGetter
+      }
+    })
   ],
   /* Services included here */
   providers: [FlashMessagesService],
