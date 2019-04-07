@@ -3,12 +3,13 @@
    File Name: styles.css
    Student Name: Ali Mokheamer
    Student Number: 300884450
-   Date: March 30, 2019
+   Date: April 6, 2019
 */
 
 /* Body Styling */
-.content {
-  padding-top: 7%;
+
+.bringContentUp {
+  margin-bottom: 7rem;
 }
 
 #contentOfPage {
