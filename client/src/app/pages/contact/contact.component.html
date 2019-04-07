@@ -1,11 +1,11 @@
 <app-base-page></app-base-page>
 <br />
-<div *ngIf="isSignedIn()" class="container">
+<div class="container">
   <div id="contentOfPage">
     <br />
     <!-- Bootstrap Card to show my contact information -->
     <!-- This is to show my contact information in Bootstraps card using a div and inside I am giving two columns one that specifies the information
-   and the other to show it-->
+   and the other to show it -->
     <div class="card" style="width: 900px; margin: auto">
       <div class="card-header"><h5>Contact Information</h5></div>
       <div class="card-body">
@@ -31,7 +31,13 @@
     </div>
     <br />
     <br />
+    <div *ngIf="isSignedIn(); else signin">
     <a class="btn btn-primary" routerLink="/contact/contacts">See Notable Contacts</a>
+  </div>
+  <ng-template #signin>
+      <a class="btn btn-primary" routerLink="/signin">See Notable Contacts</a>
+  </ng-template>
+
     <br />
     <br />
     <br />

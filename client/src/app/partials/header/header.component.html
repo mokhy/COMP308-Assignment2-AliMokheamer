@@ -33,13 +33,13 @@
       </li>
 
       <li *ngIf="isSignedIn()" class="navbar-text ml-5 mr-5 d-none d-lg-inline spaceMenuItemAuthPieces"><i class="fas fa-lg fa-user"></i>
-        Welcome, {{ user.displayName }}</li>
+        {{ user.displayName }}</li>
 
       <li *ngIf="isSignedIn()" class="nav-item"><a (click)="onSignOutClick()" routerLink="/signout" class="nav-link">
-        <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+        <i class="fas fa-md fa-power-off"></i> SignOut</a></li>
 
       <li *ngIf="!isSignedIn()" class="nav-item spaceMenuItem"><a routerLink="/signin" class="nav-link">
-        <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+        <i class="fas fa-lg fa-arrow-right"></i> SignIn</a></li>
 
     </ul>
   </div>

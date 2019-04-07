@@ -13,7 +13,8 @@ export class ContactsService {
   private user: User;
   private authToken: any = null;
 
-  private endpoint = 'http://localhost:3000/api/contacts/';
+  private endpoint = 'https://comp308-assignment2-alimokheam.herokuapp.com/api/contacts';
+  // private endpoint = 'http://localhost:3000/api/contacts/';
 
   private httpOptions = {
     headers: new HttpHeaders({

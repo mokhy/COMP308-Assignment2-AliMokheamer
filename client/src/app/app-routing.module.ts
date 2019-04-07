@@ -12,6 +12,7 @@ import { ContactsDetailsComponent } from './contact-pages/contacts-details/conta
 import { ContactsDeleteComponent } from './contact-pages/contacts-delete/contacts-delete.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { SigninComponent } from './pages/signin/signin.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, data: {title: 'Welcome to my Home Page'}},
@@ -19,13 +20,13 @@ const routes: Routes = [
   {path: 'projects', component: ProjectsComponent, data: {title: 'My Projects'}},
   {path: 'services', component: ServicesComponent, data: {title: 'Services'}},
   {path: 'contact', component: ContactComponent, data: {title: 'Contact Me'}},
-  {path: 'contact/contacts', component: ContactsListComponent, data: {title: 'Contacts'}},
   {path: 'my-resume', component: MyResumeComponent},
 
   /* Secure Areas Routes */
-  {path: 'contact/contacts/add', component: ContactsDetailsComponent, data: {title: 'Add a Contact'}},
-  {path: 'contact/contacts/edit/:id', component: ContactsDetailsComponent, data: {title: 'Edit Contact'}},
-  {path: 'contact/contacts/delete/:id', component: ContactsDeleteComponent},
+  {path: 'contact/contacts', component: ContactsListComponent, data: {title: 'Contacts'}, canActivate: [AuthGuard]},
+  {path: 'contact/contacts/add', component: ContactsDetailsComponent, data: {title: 'Add a Contact'}, canActivate: [AuthGuard]},
+  {path: 'contact/contacts/edit/:id', component: ContactsDetailsComponent, data: {title: 'Edit Contact'}, canActivate: [AuthGuard]},
+  {path: 'contact/contacts/delete/:id', component: ContactsDeleteComponent, canActivate: [AuthGuard]},
 
   /* Authorization Routes */
   {path: 'signup', component: SignupComponent, data: {title: 'Sign Up'}},

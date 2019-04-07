@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BasePageComponent } from 'src/app/partials/base-page/base-page.component';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-about',
@@ -9,11 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AboutComponent extends BasePageComponent implements OnInit {
 
-  constructor(route: ActivatedRoute) {
+  constructor(
+    route: ActivatedRoute,
+    private authService: AuthService
+    ) {
     super(route);
    }
 
   ngOnInit() {
   }
 
+  isSignedIn(): boolean {
+    return this.authService.signedIn();
+  }
 }
